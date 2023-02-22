@@ -69,6 +69,4 @@ public class ProjectImp {
 	public String toString() {
 		return "ProjectImp Id = " + pid + ", Name = " + pname + ", Cost = " + pcost + ", Duration = " + pduration;
 	}
-	
-	
 }
