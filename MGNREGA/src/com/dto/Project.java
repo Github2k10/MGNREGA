@@ -9,39 +9,25 @@ public interface Project {
 	public String getPname();
 	
 
-	public void setPname(String pname) {
-		this.pname = pname;
-	}
+	public void setPname(String pname);
 
-	public double getPcost() {
-		return pcost;
-	}
+	public double getPcost();
+	
 
-	public void setPcost(double pcost) {
-		this.pcost = pcost;
-	}
+	public void setPcost(double pcost);
+	
 
-	public int getPduration() {
-		return pduration;
-	}
+	public int getPduration();
+	
 
-	public void setPduration(int pduration) {
-		this.pduration = pduration;
-	}
+	public void setPduration(int pduration);
 
-	public int getEid() {
-		return eid;
-	}
+	public int getEid() ;
+	
 
-	public void setEid(int eid) {
-		this.eid = eid;
-	}
+	public void setEid(int eid);
 
-	public int getGid() {
-		return gid;
-	}
+	public int getGid();
 
-	public void setGid(int gid) {
-		this.gid = gid;
-	}
+	public void setGid(int gid);
 }
