@@ -5,25 +5,19 @@ public interface Project {
 	
 	public void setPid(int pid);
 	
-
 	public String getPname();
 	
-
 	public void setPname(String pname);
 
 	public double getPcost();
-	
 
 	public void setPcost(double pcost);
 	
-
 	public int getPduration();
-	
 
 	public void setPduration(int pduration);
 
 	public int getEid() ;
-	
 
 	public void setEid(int eid);
 
