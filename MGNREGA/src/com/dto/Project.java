@@ -9,21 +9,16 @@ public interface Project {
 	public String getPname();
 	
 
-	public void setPname(String pname) {
-		this.pname = pname;
-	}
+	public void setPname(String pname);
 
-	public double getPcost() {
-		return pcost;
-	}
+	public double getPcost();
+	
 
-	public void setPcost(double pcost) {
-		this.pcost = pcost;
-	}
+	public void setPcost(double pcost);
+	
 
-	public int getPduration() {
-		return pduration;
-	}
+	public int getPduration();
+	
 
 	public void setPduration(int pduration) {
 		this.pduration = pduration;
