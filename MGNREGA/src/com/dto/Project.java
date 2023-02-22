@@ -20,23 +20,14 @@ public interface Project {
 	public int getPduration();
 	
 
-	public void setPduration(int pduration) {
-		this.pduration = pduration;
-	}
+	public void setPduration(int pduration);
 
-	public int getEid() {
-		return eid;
-	}
+	public int getEid() ;
+	
 
-	public void setEid(int eid) {
-		this.eid = eid;
-	}
+	public void setEid(int eid);
 
-	public int getGid() {
-		return gid;
-	}
+	public int getGid();
 
-	public void setGid(int gid) {
-		this.gid = gid;
-	}
+	public void setGid(int gid);
 }
