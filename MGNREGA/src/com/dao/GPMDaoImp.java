@@ -4,14 +4,16 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Scanner;
 
 import com.dto.Employee;
 import com.exception.DataNotFoundException;
 import com.exception.SomethingWentWrong;
+import com.ui.AfterLogin;
 
 public class GPMDaoImp implements GPMDao{
 	@Override
-	public void login(String email, String password) throws DataNotFoundException, SomethingWentWrong {
+	public void login(String email, String password, Scanner scanner) throws DataNotFoundException, SomethingWentWrong {
 		Connection connection = null;
 		
 		try {
@@ -30,6 +32,7 @@ public class GPMDaoImp implements GPMDao{
 			
 			if(passwordString.equals(password)) {
 				 System.out.println("Login successfull as GPM\n\n");
+				 AfterLogin.forGPM(scanner);
 			} else {
 				System.out.println("Wrong password \n\n");
 			}
@@ -52,16 +55,7 @@ public class GPMDaoImp implements GPMDao{
 		try {
 			connection = ConnectToDataBase.makeConnnection();
 			
-			String query = "insert into employee (eid, ename, email, dob) values (?, ?, ?, ?)";
 			
-			PreparedStatement statement = connection.prepareStatement(query);
-			
-			statement.setInt(1, emp.getEid());
-			statement.setString(2, emp.getName());
-			statement.setString(3, emp.getEmail());
-			statement.setString(5, emp.getDob()+"");
-			
-			statement.executeUpdate();
 		} catch (SQLException e) {
 			throw new SomethingWentWrong();
 		} finally {
