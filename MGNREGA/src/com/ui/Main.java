@@ -44,7 +44,7 @@ public class Main {
 					
 					break;
 			
-			default : System.out.println("invalid input!!!!\n");
+			default : System.out.println("invalid input!!!!\n\n");
 			}
 			
 			if(flag) {
