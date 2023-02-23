@@ -21,4 +21,15 @@
  
  -- Project Table;
  
+ CREATE TABLE PROJECT ( 
+ 		pid int PRIMARY KEY, 
+ 		pname varchar(20) NOT NULL, 
+ 		pcost double default 0.00,
+ 		pduration int default 0,
+ 		eid int default null,
+ 		gid int default null,
+ 		foregin key (gid) references gpm (gid),
+ 		foregin key (eid) references employee (eid) );
+ 		
+ 
  
