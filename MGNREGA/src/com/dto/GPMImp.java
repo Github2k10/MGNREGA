@@ -68,7 +68,7 @@ public class GPMImp {
 	@Override
 	public String toString() {
 		return "Gram Panchayat Member Id = " + eid + ", Name = " + name + ", Email = " + email + ", District = " + district + ", State = "
-				+ state;;
+				+ state;
 	}
 	
 	
