@@ -1,9 +1,9 @@
 package com.dto;
 
 public interface GPM {
-	public int getEid();
+	public int getGPMid();
 
-	public void setEid(int eid);
+	public void setGPMid(int gpmid);
 
 	public String getName();
 

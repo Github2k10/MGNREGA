@@ -1,10 +1,13 @@
 -- Gram Panchayat Member (gpm) Table:
 
- create table gpm( 
- 		gid int primary key, 
- 		gname varchar(25) not null, 
- 		email_id varchar(50) unique not null, 
- 		password varchar(12) not null );
+mysql>  create table gpm(
+    -> gid INT PRIMARY KEY AUTO_INCREMENT,
+    -> gname VARCHAR(25) NOT NULL,
+    -> email_id VARCHAR(50) NOT NULL,
+    -> password VARCHAR(12) NOT NULL,
+    -> district VARCHAR(30),
+    -> state VARCHAR(30),
+    -> contact VARCHAR(10) );
  
  
  -- Employee Table:

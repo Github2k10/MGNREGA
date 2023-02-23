@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.dto.Employee;
 import com.exception.DataNotFoundException;
 import com.exception.SomethingWentWrong;
 
@@ -43,5 +44,37 @@ public class GPMDaoImp implements GPMDao{
 			}
 		}
 	}
+
+	@Override
+	public void createEmployee(Employee emp) throws SomethingWentWrong {
+		Connection connection = null;
+		
+		try {
+			connection = ConnectToDataBase.makeConnnection();
+			
+			String query = "insert into employee (eid, ename, email, dob) values (?, ?, ?, ?)";
+			
+			PreparedStatement statement = connection.prepareStatement(query);
+			
+			statement.setInt(1, emp.getEid());
+			statement.setString(2, emp.getName());
+			statement.setString(3, emp.getEmail());
+			statement.setString(5, emp.getDob()+"");
+			
+			statement.executeUpdate();
+		} catch (SQLException e) {
+			throw new SomethingWentWrong();
+		} finally {
+			try {
+				ConnectToDataBase.closeConnection(connection);
+			} catch (SQLException e) {
+				throw new SomethingWentWrong();
+			}
+		}
+		
+	}
+	
+	
+	
 
 }

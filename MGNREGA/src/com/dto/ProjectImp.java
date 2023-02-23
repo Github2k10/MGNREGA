@@ -5,16 +5,16 @@ public class ProjectImp {
 	private String pname;
 	private double pcost;
 	private int pduration;
-	private int eid;
-	private int gid;
+	private int gpmid;
 	
-	public ProjectImp(int pid, String pname, double pcost, int pduration, int eid, int gid) {
+	public ProjectImp() {}
+	
+	public ProjectImp(int pid, String pname, double pcost, int pduration, int gpmid) {
 		this.pid = pid;
 		this.pname = pname;
 		this.pcost = pcost;
 		this.pduration = pduration;
-		this.eid = eid;
-		this.gid = gid;
+		this.gpmid = gpmid;
 	}
 
 	public int getPid() {
@@ -49,20 +49,12 @@ public class ProjectImp {
 		this.pduration = pduration;
 	}
 
-	public int getEid() {
-		return eid;
+	public int getGPMid() {
+		return gpmid;
 	}
 
-	public void setEid(int eid) {
-		this.eid = eid;
-	}
-
-	public int getGid() {
-		return gid;
-	}
-
-	public void setGid(int gid) {
-		this.gid = gid;
+	public void setGPMid(int gpmid) {
+		this.gpmid = gpmid;
 	}
 
 	@Override
