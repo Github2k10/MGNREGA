@@ -11,6 +11,16 @@ public class login {
 	}
 	
 	public static void DBOLogin(String id, String password) {
-		
+		if(DBOuserid.equals(id)) {
+			if(DBOpassword.equals(password)) {
+				System.out.println("Login successfully as DBO");
+			} else {
+				System.out.println("Password Wrong!!!");
+			}
+		} else {
+			System.out.println("User ID wrong");
+		}
 	}
+	
+	
 }
