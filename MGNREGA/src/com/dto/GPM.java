@@ -9,35 +9,19 @@ public interface GPM {
 
 	public void setName(String name);
 
-	public String getEmail() {
-		return email;
-	}
+	public String getEmail();
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	public void setEmail(String email);
 
-	public String getPassword() {
-		return password;
-	}
+	public String getPassword();
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+	public void setPassword(String password);
 
-	public String getDistrict() {
-		return district;
-	}
+	public String getDistrict();
 
-	public void setDistrict(String district) {
-		this.district = district;
-	}
+	public void setDistrict(String district);
 
-	public String getState() {
-		return state;
-	}
+	public String getState();
 
-	public void setState(String state) {
-		this.state = state;
-	}
+	public void setState(String state);
 }
