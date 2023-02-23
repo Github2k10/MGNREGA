@@ -3,17 +3,11 @@ package com.dto;
 public interface GPM {
 	public int getEid();
 
-	public void setEid(int eid) {
-		this.eid = eid;
-	}
+	public void setEid(int eid);
 
-	public String getName() {
-		return name;
-	}
+	public String getName();
 
-	public void setName(String name) {
-		this.name = name;
-	}
+	public void setName(String name);
 
 	public String getEmail() {
 		return email;
