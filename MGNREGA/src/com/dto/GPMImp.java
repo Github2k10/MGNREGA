@@ -1,15 +1,17 @@
 package com.dto;
 
 public class GPMImp {
-	private int eid;
+	private int gpmid;
 	private String name;
 	private String email;
 	private String password;
 	private String district;
 	private String state;
 	
-	public GPMImp(int eid, String name, String email, String password, String district, String state) {
-		this.eid = eid;
+	public GPMImp() {}
+	
+	public GPMImp(int gpmid, String name, String email, String password, String district, String state) {
+		this.gpmid = gpmid;
 		this.name = name;
 		this.email = email;
 		this.password = password;
@@ -17,12 +19,12 @@ public class GPMImp {
 		this.state = state;
 	}
 
-	public int getEid() {
-		return eid;
+	public int getGPMid() {
+		return gpmid;
 	}
 
-	public void setEid(int eid) {
-		this.eid = eid;
+	public void setGPMid(int gpmid) {
+		this.gpmid = gpmid;
 	}
 
 	public String getName() {
@@ -67,7 +69,7 @@ public class GPMImp {
 
 	@Override
 	public String toString() {
-		return "Gram Panchayat Member Id = " + eid + ", Name = " + name + ", Email = " + email + ", District = " + district + ", State = "
+		return "Gram Panchayat Member Id = " + gpmid + ", Name = " + name + ", Email = " + email + ", District = " + district + ", State = "
 				+ state;
 	}
 	

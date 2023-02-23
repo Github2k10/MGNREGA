@@ -6,19 +6,25 @@ public class EmployeeImp {
 	private int eid;
 	private String name;
 	private String email;
-	private int working_day;
-	private int pid;
+	private LocalDate joining_Date;
+	private double wages;
 	private LocalDate dob;
-	private int gid;
-	public EmployeeImp(int eid, String name, String email, int working_day, int pid, LocalDate dob, int gid) {
+	private int epid;
+	private int egpmid;
+	
+	public EmployeeImp() {}
+	
+	public EmployeeImp(int eid, String name, String email, LocalDate joining_Date, double wages, int epid, LocalDate dob, int egpmid) {
 		this.eid = eid;
 		this.name = name;
 		this.email = email;
-		this.working_day = working_day;
-		this.pid = pid;
+		this.joining_Date = joining_Date;
+		this.wages = wages;
+		this.epid = epid;
 		this.dob = dob;
-		this.gid = gid;
+		this.egpmid = egpmid;
 	}
+
 	public int getEid() {
 		return eid;
 	}
@@ -37,17 +43,12 @@ public class EmployeeImp {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getWorking_day() {
-		return working_day;
-	}
-	public void setWorking_day(int working_day) {
-		this.working_day = working_day;
-	}
+	
 	public int getPid() {
-		return pid;
+		return epid;
 	}
-	public void setPid(int pid) {
-		this.pid = pid;
+	public void setPid(int epid) {
+		this.epid = epid;
 	}
 	public LocalDate getDob() {
 		return dob;
@@ -56,16 +57,32 @@ public class EmployeeImp {
 		this.dob = dob;
 	}
 	public int getGid() {
-		return gid;
+		return egpmid;
 	}
-	public void setGid(int gid) {
-		this.gid = gid;
+	public void setGid(int egpmid) {
+		this.egpmid = egpmid;
 	}
 	
+	public LocalDate getJoining_Date() {
+		return joining_Date;
+	}
+
+	public void setJoining_Date(LocalDate joining_Date) {
+		this.joining_Date = joining_Date;
+	}
+
+	public double getWages() {
+		return wages;
+	}
+
+	public void setWages(double wages) {
+		this.wages = wages;
+	}
+
 	@Override
 	public String toString() {
-		return "Employee Id = " + eid + ", Name = " + name + ", Email = " + email + ", Working days = " + working_day
-				+ ", DOB = " + dob;
+		return "Employee Id = " + eid + ", Name = " + name + ", Email = " + email 
+				+ ", DOB = " + dob + ", Joining Date = " + joining_Date + ", Wages = " + wages; 
 	}
 	
 	

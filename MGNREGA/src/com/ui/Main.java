@@ -37,7 +37,7 @@ public class Main {
 					 password = scanner.nextLine();
 					 
 					try {
-						gpm.login(userId, password);
+						gpm.login(userId, password, scanner);
 					} catch (DataNotFoundException | SomethingWentWrong e) {
 						e.printStackTrace();
 					}

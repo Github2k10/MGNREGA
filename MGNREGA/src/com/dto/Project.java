@@ -17,11 +17,7 @@ public interface Project {
 
 	public void setPduration(int pduration);
 
-	public int getEid() ;
+	public int getGPMid();
 
-	public void setEid(int eid);
-
-	public int getGid();
-
-	public void setGid(int gid);
+	public void setGPMid(int gid);
 }

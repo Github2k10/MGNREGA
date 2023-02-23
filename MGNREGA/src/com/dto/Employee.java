@@ -15,13 +15,13 @@ public interface Employee {
 	
 	public void setEmail(String email);
 	
-	public int getWorking_day();
-	
-	public void setWorking_day(int working_day);
+	public LocalDate getJoining_Date();
+
+	public void setJoining_Date(LocalDate joining_Date);
 	
 	public int getPid();
 	
-	public void setPid(int pid);
+	public void setPid(int epid);
 	
 	public LocalDate getDob() ;
 	
@@ -29,5 +29,5 @@ public interface Employee {
 	
 	public int getGid();
 	
-	public void setGid(int gid);
+	public void setGid(int egpmid);
 }
