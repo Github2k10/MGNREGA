@@ -24,4 +24,12 @@ public interface GPM {
 	public String getState();
 
 	public void setState(String state);
+	
+	public int getGpmid();
+
+	public void setGpmid(int gpmid);
+
+	public String getContact();
+
+	public void setContact(String contact);
 }

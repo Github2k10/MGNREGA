@@ -2,73 +2,47 @@ package com.dto;
 
 import java.time.LocalDate;
 
-public class EmployeeImp {
-	private int eid;
+public class EmployeeImp implements Employee{
 	private String name;
 	private String email;
-	private LocalDate joining_Date;
-	private double wages;
+	private String contact;
 	private LocalDate dob;
+	private int eid;
 	private int epid;
-	private int egpmid;
+	private LocalDate joiningDate ;
+	private double wages;
 	
 	public EmployeeImp() {}
-	
-	public EmployeeImp(int eid, String name, String email, LocalDate joining_Date, double wages, int epid, LocalDate dob, int egpmid) {
-		this.eid = eid;
+
+	public EmployeeImp(String name, String email, String contact, LocalDate dob) {
 		this.name = name;
 		this.email = email;
-		this.joining_Date = joining_Date;
-		this.wages = wages;
-		this.epid = epid;
+		this.contact = contact;
 		this.dob = dob;
-		this.egpmid = egpmid;
 	}
-
+	
 	public int getEid() {
 		return eid;
 	}
+
 	public void setEid(int eid) {
 		this.eid = eid;
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	
-	public int getPid() {
+
+	public int getEpid() {
 		return epid;
 	}
-	public void setPid(int epid) {
+
+	public void setEpid(int epid) {
 		this.epid = epid;
 	}
-	public LocalDate getDob() {
-		return dob;
-	}
-	public void setDob(LocalDate dob) {
-		this.dob = dob;
-	}
-	public int getGid() {
-		return egpmid;
-	}
-	public void setGid(int egpmid) {
-		this.egpmid = egpmid;
-	}
-	
-	public LocalDate getJoining_Date() {
-		return joining_Date;
+
+	public LocalDate getJoiningDate() {
+		return joiningDate;
 	}
 
-	public void setJoining_Date(LocalDate joining_Date) {
-		this.joining_Date = joining_Date;
+	public void setJoiningDate(LocalDate joiningDate) {
+		this.joiningDate = joiningDate;
 	}
 
 	public double getWages() {
@@ -79,12 +53,43 @@ public class EmployeeImp {
 		this.wages = wages;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getContact() {
+		return contact;
+	}
+
+	public void setContact(String contact) {
+		this.contact = contact;
+	}
+
+	public LocalDate getDob() {
+		return dob;
+	}
+
+	public void setDob(LocalDate dob) {
+		this.dob = dob;
+	}
+
 	@Override
 	public String toString() {
-		return "Employee Id = " + eid + ", Name = " + name + ", Email = " + email 
-				+ ", DOB = " + dob + ", Joining Date = " + joining_Date + ", Wages = " + wages; 
+		return "Employee Id = " + eid + ", Name = " + name + ", Emai = " + email + ", Contact = " + contact + 
+			   ", DOB = " + dob + ", Joining Date = " + joiningDate + ", Wages = " + wages + ", Project id = " + epid;
 	}
-	
 	
 	
 }
