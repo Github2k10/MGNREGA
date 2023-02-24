@@ -88,4 +88,26 @@ public class ProjectDoa {
 		
 		return list;
 	}
+	
+	public static boolean deleteproject(Integer id) throws SomethingWentWrong {
+		Connection connection = null;
+		
+		try {
+			connection = ConnectToDataBase.makeConnnection();
+			
+			PreparedStatement statement = connection.prepareStatement("delete from project where pid = ?");
+			statement.setInt(1, id);
+			ResultSet  resultSet = statement.executeQuery();
+		} catch (SQLException e) {
+			
+		} finally {
+			try {
+				ConnectToDataBase.closeConnection(connection);
+			} catch (SQLException e) {
+				throw new SomethingWentWrong();
+			}
+		}
+		
+		return true;
+	}
 }
