@@ -55,18 +55,7 @@ public class Main {
 //		} while (true);
 		
 		
-		try {
-			EmployeeDoa.deleteEmployee(1);
-		} catch (SomethingWentWrong e1) {
-		}
 		
-		try {
-			Employee employee = EmployeeDoa.viewDetails(1);
-			
-			System.out.println(employee.toString());
-		} catch (DataNotFoundException | SomethingWentWrong e) {
-			System.out.println(e.getMessage());
-		}
 		
 		
 		System.out.print("Thank you for visting");
