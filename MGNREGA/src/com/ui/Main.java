@@ -1,18 +1,26 @@
 package com.ui;
 
+import java.time.LocalDate;
+import java.util.List;
 import java.util.Scanner;
 
 import com.dao.EmployeeDoa;
 import com.dao.GPMDao;
+import com.dao.ProjectDoa;
 import com.dto.Employee;
+import com.dto.EmployeeImp;
+import com.dto.GPM;
+import com.dto.GPMImp;
+import com.dto.Project;
+import com.dto.ProjectImp;
 import com.exception.DataNotFoundException;
 import com.exception.SomethingWentWrong;
+import com.mysql.cj.protocol.a.LocalDateTimeValueEncoder;
 
 public class Main {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		GPMDao gpm = new GPMDao();
 		
 //		do {
 //			System.out.println("1. Login as BDO\n2. Login as Gram Panchayat Member\n99. Exit");
@@ -37,6 +45,7 @@ public class Main {
 //					 userId = scanner.nextLine();
 //					 System.out.println("Enter DBO password: ");
 //					 password = scanner.nextLine();
+		
 //					 
 //					try {
 //						gpm.login(userId, password, scanner);
@@ -55,7 +64,12 @@ public class Main {
 //		} while (true);
 		
 		
-		
+		try {
+			GPMDao.assignProjectToGPM(1, 1);
+		} catch (SomethingWentWrong  e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
 		
 		
 		System.out.print("Thank you for visting");
