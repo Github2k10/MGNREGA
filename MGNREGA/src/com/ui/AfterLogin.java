@@ -18,7 +18,9 @@ public class AfterLogin {
 		
 		do {
 			System.out.println(
-					"1. Create new Employee\n2. View details of Employee\n3. delete employee\n4 Assign Employee to a product\n5. View total number of days worked in the project and also their wages\n6. Logut");
+					"1. Create new Employee\n2. View details of Employee\n3. delete employee\n4. "
+					+ "Assign Employee to a product\n5. Give wages to employee\n6. "
+					+ "View total number of days worked in the project and also their wages\n7. Logut");
 			boolean flag = false;
 
 			int choise = Integer.parseInt(scanner.nextLine());
@@ -53,8 +55,12 @@ public class AfterLogin {
 					break;
 
 			case 4:
-
+				
 			case 5:
+				
+			case 6:
+
+			case 7:
 				flag = true;
 				break;
 			default:
@@ -72,7 +78,9 @@ public class AfterLogin {
 	public static void forBDO(Scanner scanner) {
 		do {
 			System.out.println(
-					"\n1. Create Project\n2. view List of Project\n3. Create new GPM\n4. View all the GPM\n5. Allocate project to GPM\n6. See list of employee working on that project and their wages\n7. Logout");
+					"\n1. Create Project\n2. view List of Project\n3. Create new GPM\n4. Delete project\n5. "
+					+ "View all the GPM\n6. delete GPM\n7. Allocate project to GPM\n8. "
+					+ "See list of employee working on that project and their wages\n9. Logout");
 			boolean flag = false;
 
 			int choise = Integer.parseInt(scanner.nextLine());
@@ -104,8 +112,12 @@ public class AfterLogin {
 			case 5:
 
 			case 6:
-
+				
 			case 7:
+				
+			case 8:
+
+			case 9:
 				flag = true;
 				System.out.print("Logut successfully as BDO");
 				break;
