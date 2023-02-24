@@ -109,7 +109,11 @@ public class EmployeeDoa {
 			PreparedStatement statement = connection.prepareStatement("delete from employee where eid = ?");
 			statement.setInt(1, eid);
 			
-			statement.executeUpdate();
+			ResultSet  resultSet = statement.executeQuery();
+			resultSet.next();
+			
+			
+			System.out.println(resultSet);
 		} catch (SQLException e) {
 			throw new SomethingWentWrong();
 		} finally {

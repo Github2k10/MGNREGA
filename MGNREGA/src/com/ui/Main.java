@@ -56,7 +56,7 @@ public class Main {
 		
 		
 		try {
-			EmployeeDoa.assignProjectToEmployee(1, null);
+			EmployeeDoa.deleteEmployee(1);
 		} catch (SomethingWentWrong e1) {
 		}
 		
