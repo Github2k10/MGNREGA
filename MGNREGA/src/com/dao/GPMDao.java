@@ -39,7 +39,7 @@ public class GPMDao {
 		return list;
 	}
 	
-	public void login(String email, String password, Scanner scanner) throws DataNotFoundException, SomethingWentWrong {
+	public static void login(String email, String password, Scanner scanner) throws DataNotFoundException, SomethingWentWrong {
 		Connection connection = null;
 		
 		try {
