@@ -33,4 +33,6 @@ public interface Employee {
 
 	public double getWages();
 	
+	public void setWages(double wages);
+	
 }

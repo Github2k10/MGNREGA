@@ -3,7 +3,9 @@ package com.ui;
 import java.util.List;
 import java.util.Scanner;
 
+import com.dao.EmployeeDoa;
 import com.dao.ProjectDoa;
+import com.dto.Employee;
 import com.dto.Project;
 import com.exception.DataNotFoundException;
 import com.exception.SomethingWentWrong;
@@ -20,9 +22,17 @@ public class AfterLogin {
 			int choise = Integer.parseInt(scanner.nextLine());
 			
 			switch (choise) {
-			case 1 : 
+			case 1 : Employee employee = Input.forEmployee(scanner);
+				
+					try {
+						EmployeeDoa.createEmployee(employee);
+					} catch (SomethingWentWrong e) {
+						System.out.println(e.getMessage());
+					}
+					break;
 						
-			case 2 :
+			case 2 : System.out.println("Enter Employee Id: ");
+					 
 				
 			case 3 :
 				
