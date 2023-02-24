@@ -2,11 +2,14 @@ package com.ui;
 
 import java.util.Scanner;
 
+import com.dto.Employee;
+import com.dto.EmployeeImp;
+
 public class AfterLogin {
 	
 	
 	public static void forGPM(Scanner scanner) {
-		
+		System.out.println("Loged In successfully as Gram Pancahayat Member!!!");
 		do {
 			System.out.println("1. Create new Employee\n2. View details of Employee\n3. Assign Employee to a product\n4. View total number of days worked in the project and also their wages\n5. Logut");
 			boolean flag = false;
@@ -15,7 +18,7 @@ public class AfterLogin {
 			
 			switch (choise) {
 			case 1 : 
-				
+						
 			case 2 :
 				
 			case 3 :
@@ -35,7 +38,7 @@ public class AfterLogin {
 	}
 	
 public static void forBDO(Scanner scanner) {
-		
+	System.out.println("Loged In Block Development Officer!!!");
 		do {
 			System.out.println("1. Create Project\n2. view List of Project\n3. Create new GPM\n4. View all the GPM\n5. Allocate project to GPM\n6. See list of employee working on that project and their wages\n7. Logout");
 			boolean flag = false;

@@ -1,6 +1,6 @@
 package com.dto;
 
-public class ProjectImp {
+public class ProjectImp implements Project{
 	private int pid;
 	private String pname;
 	private double pcost;
@@ -9,12 +9,9 @@ public class ProjectImp {
 	
 	public ProjectImp() {}
 	
-	public ProjectImp(int pid, String pname, double pcost, int pduration, int gpmid) {
-		this.pid = pid;
+	public ProjectImp(String pname, double pcost) {
 		this.pname = pname;
 		this.pcost = pcost;
-		this.pduration = pduration;
-		this.gpmid = gpmid;
 	}
 
 	public int getPid() {
