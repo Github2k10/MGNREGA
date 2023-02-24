@@ -1,75 +1,48 @@
 package com.ui;
 
-import java.time.LocalDate;
-import java.util.List;
 import java.util.Scanner;
 
-import com.dao.EmployeeDoa;
-import com.dao.GPMDao;
-import com.dao.ProjectDoa;
-import com.dto.Employee;
-import com.dto.EmployeeImp;
-import com.dto.GPM;
-import com.dto.GPMImp;
-import com.dto.Project;
-import com.dto.ProjectImp;
-import com.exception.DataNotFoundException;
-import com.exception.SomethingWentWrong;
-import com.mysql.cj.protocol.a.LocalDateTimeValueEncoder;
 
 public class Main {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		
-//		do {
-//			System.out.println("1. Login as BDO\n2. Login as Gram Panchayat Member\n99. Exit");
-//			int choice = Integer.parseInt(scanner.nextLine());
-//			boolean flag = false;
-//			String userId = null;
-//			String password = null;
-//			
-//			switch(choice) {
-//			case 99 : flag = true;
-//					 break;
-//			
-//			case 1 : System.out.println("Enter DBO userId: ");
-//					 userId = scanner.nextLine();
-//					 System.out.println("Enter DBO password: ");
-//					 password = scanner.nextLine();
-//					 
-//					 login.DBOLogin(userId, password, scanner);
-//					 break;
-//			
-//			case 2 : System.out.println("Enter DBO userId: ");
-//					 userId = scanner.nextLine();
-//					 System.out.println("Enter DBO password: ");
-//					 password = scanner.nextLine();
+		do {
+			System.out.println("1. Login as BDO\n2. Login as Gram Panchayat Member\n99. Exit");
+			int choice = Integer.parseInt(scanner.nextLine());
+			boolean flag = false;
+			String userId = null;
+			String password = null;
+			
+			switch(choice) {
+			case 99 : flag = true;
+					 break;
+			
+			case 1 : System.out.println("Enter DBO userId: ");
+					 userId = scanner.nextLine();
+					 System.out.println("Enter DBO password: ");
+					 password = scanner.nextLine();
+					 
+					 Login.DBOLogin(userId, password, scanner);
+					 break;
+			
+			case 2 : System.out.println("Enter DBO userId: ");
+					 userId = scanner.nextLine();
+					 System.out.println("Enter DBO password: ");
+					 password = scanner.nextLine();	
+					 
+					 Login.GPMLogin(userId, password, scanner);
+					 break;
+			
+			default : System.out.println("invalid input!!!!\n\n");
+			}
+			
+			if(flag) {
+				break;
+			}
+		} while (true);
 		
-//					 
-//					try {
-//						gpm.login(userId, password, scanner);
-//					} catch (DataNotFoundException | SomethingWentWrong e) {
-//						e.printStackTrace();
-//					}
-//					
-//					break;
-//			
-//			default : System.out.println("invalid input!!!!\n\n");
-//			}
-//			
-//			if(flag) {
-//				break;
-//			}
-//		} while (true);
-		
-		
-		try {
-			GPMDao.assignProjectToGPM(1, 1);
-		} catch (SomethingWentWrong  e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
 		
 		
 		System.out.print("Thank you for visting");

@@ -2,7 +2,11 @@ package com.ui;
 
 import java.util.Scanner;
 
-public class login {
+import com.dao.GPMDao;
+import com.exception.DataNotFoundException;
+import com.exception.SomethingWentWrong;
+
+public class Login {
 	private static final String DBOuserid;
 	private static final String DBOpassword;
 	
@@ -24,7 +28,12 @@ public class login {
 		}
 	}
 	
-	public static void GPMLogin(String id, String password) {
-		
+	public static void GPMLogin(String id, String password, Scanner scanner) {
+		try {
+			GPMDao.login(id, password, scanner);
+		} catch (DataNotFoundException | SomethingWentWrong e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
