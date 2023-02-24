@@ -25,11 +25,13 @@ public class GPMDao {
 		while(resultSet.next()) {
 			GPM gpm = new GPMImp();
 			
+			gpm.setGPMid(resultSet.getInt("gid"));
 			gpm.setName(resultSet.getString("gname"));
 			gpm.setEmail(resultSet.getString("email_id"));
 			gpm.setPassword(resultSet.getString("password"));
 			gpm.setDistrict(resultSet.getString("district"));
 			gpm.setState(resultSet.getString("state"));
+			gpm.setContact(resultSet.getString("contact"));
 			
 			list.add(gpm);
 		}
@@ -79,13 +81,14 @@ public class GPMDao {
 		try {
 			connection = ConnectToDataBase.makeConnnection();
 			
-			PreparedStatement statement = connection.prepareStatement("insert into gpm (gname, email_id, password, district, state) values (?, ?, ?, ?, ?)");
+			PreparedStatement statement = connection.prepareStatement("insert into gpm (gname, email_id, password, district, state, contact) values (?, ?, ?, ?, ?, ?)");
 			
 			statement.setString(1, gpm.getName());
 			statement.setString(2, gpm.getEmail());
 			statement.setString(3, gpm.getPassword());
 			statement.setString(4, gpm.getDistrict());
-			statement.setString(5, gpm.getDistrict());
+			statement.setString(5, gpm.getState());
+			statement.setString(6, gpm.getContact());
 			
 			statement.executeUpdate();
 		} catch (SQLException e) {
@@ -152,14 +155,14 @@ public class GPMDao {
 		return true;
 	}
 	
-	public static boolean assignProjectToGPM(Integer gpmid, String pid) throws SomethingWentWrong {
+	public static boolean assignProjectToGPM(Integer gpmid, Integer pid) throws SomethingWentWrong {
 		Connection connection = null;
 		
 		try {
 			connection = ConnectToDataBase.makeConnnection();
 			
 			PreparedStatement statement = connection.prepareStatement("update gpm set pid = ? where gid = ?");
-			statement.setString(1, pid);
+			statement.setInt(1, pid);
 			statement.setInt(2, gpmid);
 			
 			statement.executeUpdate();

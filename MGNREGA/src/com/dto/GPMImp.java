@@ -17,6 +17,7 @@ public class GPMImp implements GPM{
 		this.password = password;
 		this.district = district;
 		this.state = state;
+		this.contact = contact;
 	}
 
 	public int getGPMid() {
@@ -66,14 +67,6 @@ public class GPMImp implements GPM{
 	public void setState(String state) {
 		this.state = state;
 	}
-	
-	public int getGpmid() {
-		return gpmid;
-	}
-
-	public void setGpmid(int gpmid) {
-		this.gpmid = gpmid;
-	}
 
 	public String getContact() {
 		return contact;
@@ -86,7 +79,7 @@ public class GPMImp implements GPM{
 	@Override
 	public String toString() {
 		return "Gram Panchayat Member Id = " + gpmid + ", Name = " + name + ", Email = " + email + ", District = " + district + ", State = "
-				+ state;
+				+ state + ", Contact = " + contact;
 	}
 	
 }
