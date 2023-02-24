@@ -123,6 +123,31 @@ public class EmployeeDoa {
 				throw new SomethingWentWrong();
 			}
 		}
+		return true; 
+	}
+	
+	
+	public static boolean giveWagesToEmployee(Integer id, Double amount) throws SomethingWentWrong {
+		Connection connection = null;
+		
+		try {
+			connection = ConnectToDataBase.makeConnnection();
+			
+			PreparedStatement statement = connection.prepareStatement("update gpm set pid = ? where gid = ?");
+			statement.setDouble(1, amount);
+			statement.setInt(2, id);
+			
+			statement.executeUpdate();
+		} catch (SQLException e) {
+			
+		} finally {
+			try {
+				ConnectToDataBase.closeConnection(connection);
+			} catch (SQLException e) {
+				throw new SomethingWentWrong();
+			}
+		}
+		
 		return true;
 	}
 	

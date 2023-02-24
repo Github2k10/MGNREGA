@@ -129,6 +129,53 @@ public class GPMDao {
 		}
 		return list;
 	}
+	
+	public static boolean deleteGPM(Integer id) throws SomethingWentWrong {
+		Connection connection = null;
+		
+		try {
+			connection = ConnectToDataBase.makeConnnection();
+			
+			PreparedStatement statement = connection.prepareStatement("delete from gpm where gid = ?");
+			statement.setInt(1, id);
+			ResultSet  resultSet = statement.executeQuery();
+		} catch (SQLException e) {
+			
+		} finally {
+			try {
+				ConnectToDataBase.closeConnection(connection);
+			} catch (SQLException e) {
+				throw new SomethingWentWrong();
+			}
+		}
+		
+		return true;
+	}
+	
+	public static boolean assignProjectToGPM(Integer gpmid, String pid) throws SomethingWentWrong {
+		Connection connection = null;
+		
+		try {
+			connection = ConnectToDataBase.makeConnnection();
+			
+			PreparedStatement statement = connection.prepareStatement("update gpm set pid = ? where gid = ?");
+			statement.setString(1, pid);
+			statement.setInt(2, gpmid);
+			
+			statement.executeUpdate();
+		} catch (SQLException e) {
+			
+		} finally {
+			try {
+				ConnectToDataBase.closeConnection(connection);
+			} catch (SQLException e) {
+				throw new SomethingWentWrong();
+			}
+		}
+		
+		return true;
+	}
+	
 }
 
 
