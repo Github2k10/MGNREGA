@@ -13,7 +13,7 @@ import com.ui.AfterLogin;
 
 public class GPMDao {
 	
-	public static void login(String email, String password, Scanner scanner) throws DataNotFoundException, SomethingWentWrong {
+	public void login(String email, String password, Scanner scanner) throws DataNotFoundException, SomethingWentWrong {
 		Connection connection = null;
 		
 		try {
@@ -49,7 +49,7 @@ public class GPMDao {
 	}
 
 	
-	public static void createEmployee(Employee emp) throws SomethingWentWrong {
+	public void createEmployee(Employee emp) throws SomethingWentWrong {
 		Connection connection = null;
 		
 		try {
