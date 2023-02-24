@@ -54,6 +54,12 @@ public class Main {
 //			}
 //		} while (true);
 		
+		
+		try {
+			EmployeeDoa.assignProjectToEmployee(1, null);
+		} catch (SomethingWentWrong e1) {
+		}
+		
 		try {
 			Employee employee = EmployeeDoa.viewDetails(1);
 			

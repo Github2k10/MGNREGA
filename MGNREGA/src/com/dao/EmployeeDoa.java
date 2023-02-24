@@ -76,13 +76,15 @@ public class EmployeeDoa {
 	}
 	
 	
-	public static boolean assignEmployee(int eid, int pid) throws SomethingWentWrong {
+	public static boolean assignProjectToEmployee(Integer eid, Integer pid) throws SomethingWentWrong {
 		Connection connection = null;
 		
 		try {
 			connection = ConnectToDataBase.makeConnnection();
 			
 			PreparedStatement statement = connection.prepareStatement("update employee set epid = ? where eid = ?");
+			statement.setInt(1, pid);
+			statement.setInt(2, eid);
 			
 			statement.executeUpdate();
 		} catch (SQLException e) {
@@ -97,6 +99,29 @@ public class EmployeeDoa {
 		
 		return true;
 	}
+	
+	public static boolean deleteEmployee(Integer eid) throws SomethingWentWrong {
+		Connection connection = null;
+		
+		try {
+			connection = ConnectToDataBase.makeConnnection();
+			
+			PreparedStatement statement = connection.prepareStatement("delete from employee where eid = ?");
+			statement.setInt(1, eid);
+			
+			statement.executeUpdate();
+		} catch (SQLException e) {
+			throw new SomethingWentWrong();
+		} finally {
+			try {
+				ConnectToDataBase.closeConnection(connection);
+			} catch (SQLException e) {
+				throw new SomethingWentWrong();
+			}
+		}
+		return true;
+	}
+	
 }
 
 
