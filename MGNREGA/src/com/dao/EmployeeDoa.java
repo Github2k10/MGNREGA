@@ -50,7 +50,7 @@ public class EmployeeDoa {
 			statement.setInt(1, id);
 			
 			ResultSet resultSet = statement.executeQuery();
-			
+			resultSet.next();
 			employee = new EmployeeImp();
 			
 			employee.setEid(id);
@@ -63,7 +63,7 @@ public class EmployeeDoa {
 			employee.setEpid(resultSet.getInt("epid"));
 			
 		} catch (SQLException e) {
-			throw new DataNotFoundException("Employee not found with this Id");
+			throw new DataNotFoundException("Employee Not found with this Id");
 		} finally {
 			try {
 				ConnectToDataBase.closeConnection(connection);
@@ -74,4 +74,33 @@ public class EmployeeDoa {
 		
 		return employee;
 	}
+	
+	
+	public static boolean assignEmployee(int eid, int pid) throws SomethingWentWrong {
+		Connection connection = null;
+		
+		try {
+			connection = ConnectToDataBase.makeConnnection();
+			
+			PreparedStatement statement = connection.prepareStatement("update employee set epid = ? where eid = ?");
+			
+			statement.executeUpdate();
+		} catch (SQLException e) {
+			throw new SomethingWentWrong();
+		} finally {
+			try {
+				ConnectToDataBase.closeConnection(connection);
+			} catch (SQLException e) {
+				throw new SomethingWentWrong();
+			}
+		}
+		
+		return true;
+	}
 }
+
+
+
+
+
+
