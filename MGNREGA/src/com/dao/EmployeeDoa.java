@@ -5,13 +5,45 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.dto.Employee;
 import com.dto.EmployeeImp;
+import com.dto.Project;
+import com.dto.ProjectImp;
 import com.exception.DataNotFoundException;
 import com.exception.SomethingWentWrong;
 
 public class EmployeeDoa {
+	private static boolean isResultSetEmpty(ResultSet resultSet) throws SQLException {
+		return (!resultSet.isBeforeFirst() && resultSet.getRow() == 0) ? true : false;
+	}
+	
+	
+	private static List<Employee> getList(ResultSet resultSet) throws SQLException{
+		List<Employee> list = new ArrayList<>();
+		
+		while(resultSet.next()) {
+			Employee employee = new EmployeeImp();
+			
+			employee.setEid(resultSet.getInt("eid"));
+			employee.setName(resultSet.getString("ename"));
+			employee.setEmail(resultSet.getString("email_id"));
+			employee.setContact(resultSet.getString("contact"));
+			employee.setWages(resultSet.getDouble("wages"));
+		
+			employee.setDob(Date.valueOf(resultSet.getDate("dob") + "").toLocalDate());
+			employee.setJoiningDate(Date.valueOf(resultSet.getDate("joining_date") + "").toLocalDate());
+			
+			
+			list.add(employee);
+		}
+		
+		return list;
+	}
+	
+	
 	public static boolean createEmployee(Employee employee) throws SomethingWentWrong {
 		Connection connection = null;
 		
@@ -147,4 +179,34 @@ public class EmployeeDoa {
 		return true;
 	}
 	
+	
+	public static boolean listEmployeeWorkinigOnProject(Integer pid) throws SomethingWentWrong, DataNotFoundException {
+		Connection connection = null;
+		List<Employee> list = null;
+		
+		try {
+			connection = ConnectToDataBase.makeConnnection();
+			
+			PreparedStatement statement = connection.prepareStatement("select eid, ename, email_id, contact, dob, joining_date, wages, work_days from employee as e inner join project p on e.epid = p.pid where p.pid = ?");
+			statement.setInt(1, pid);
+			
+			ResultSet resultSet = statement.executeQuery();
+			
+			if(isResultSetEmpty(resultSet)) {
+				throw new DataNotFoundException("Project table is empty");
+			}
+			
+			list = getList(resultSet);
+		} catch (SQLException e) {
+			throw new DataNotFoundException("Employee Not found with this Id");
+		} finally {
+			try {
+				ConnectToDataBase.closeConnection(connection);
+			} catch (SQLException e) {
+				throw new SomethingWentWrong();
+			}
+		}
+		
+		return true;
+	}
 }
