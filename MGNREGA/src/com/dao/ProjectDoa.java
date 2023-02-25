@@ -23,7 +23,6 @@ public class ProjectDoa {
 		while(resultSet.next()) {
 			Project project = new ProjectImp();
 			
-			
 			project.setPid(resultSet.getInt("pid"));
 			project.setPname(resultSet.getString("pname"));
 			project.setPcost(resultSet.getDouble("pcost"));
@@ -47,6 +46,9 @@ public class ProjectDoa {
 			statement.setDouble(2, project.getPcost());
 			
 			statement.executeUpdate();
+			System.out.println("\n\n**************************************************");
+			System.out.println("       Project Created Successfully         ");
+			System.out.println("***************************************************");
 		} catch (SQLException e) {
 			throw new SomethingWentWrong();
 		} finally {

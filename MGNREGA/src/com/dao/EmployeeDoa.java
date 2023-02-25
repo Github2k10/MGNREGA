@@ -10,8 +10,6 @@ import java.util.List;
 
 import com.dto.Employee;
 import com.dto.EmployeeImp;
-import com.dto.Project;
-import com.dto.ProjectImp;
 import com.exception.DataNotFoundException;
 import com.exception.SomethingWentWrong;
 
@@ -19,7 +17,6 @@ public class EmployeeDoa {
 	private static boolean isResultSetEmpty(ResultSet resultSet) throws SQLException {
 		return (!resultSet.isBeforeFirst() && resultSet.getRow() == 0) ? true : false;
 	}
-	
 	
 	private static List<Employee> getList(ResultSet resultSet) throws SQLException{
 		List<Employee> list = new ArrayList<>();
@@ -32,10 +29,9 @@ public class EmployeeDoa {
 			employee.setEmail(resultSet.getString("email_id"));
 			employee.setContact(resultSet.getString("contact"));
 			employee.setWages(resultSet.getDouble("wages"));
-		
+			employee.setWorkingDays(resultSet.getInt("work_days"));
 			employee.setDob(Date.valueOf(resultSet.getDate("dob") + "").toLocalDate());
 			employee.setJoiningDate(Date.valueOf(resultSet.getDate("joining_date") + "").toLocalDate());
-			
 			
 			list.add(employee);
 		}
@@ -197,6 +193,10 @@ public class EmployeeDoa {
 			}
 			
 			list = getList(resultSet);
+			
+			for(Employee emp : list) {
+				System.out.println( "Employee Id: " +  emp.getEid() + ", Name: " + emp.getName() + ", Wages: " + emp.getWages() + ", Working Days: " + emp.getWorkingDays());
+			}
 		} catch (SQLException e) {
 			throw new DataNotFoundException("Employee Not found with this Id");
 		} finally {
