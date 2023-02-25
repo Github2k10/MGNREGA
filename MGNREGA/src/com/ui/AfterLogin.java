@@ -7,6 +7,7 @@ import com.dao.EmployeeDoa;
 import com.dao.GPMDao;
 import com.dao.ProjectDoa;
 import com.dto.Employee;
+import com.dto.EmployeeImp;
 import com.dto.GPM;
 import com.dto.GPMImp;
 import com.dto.Project;
@@ -43,7 +44,9 @@ public class AfterLogin {
 			case 2: System.out.println("Enter Employee Id: ");
 					n = Integer.parseInt(scanner.nextLine());
 					try {
-						EmployeeDoa.viewDetails(n);
+						Employee emp =  EmployeeDoa.viewDetails(n);
+						
+						System.out.println(emp.toString());
 					} catch (DataNotFoundException |SomethingWentWrong e) {
 						System.out.println(e.getMessage());
 					}
@@ -79,9 +82,9 @@ public class AfterLogin {
 				    Double amount = Double.parseDouble(scanner.nextLine());
 				
 					try {
-						EmployeeDoa.giveWagesToEmployee(p, amount);
+						EmployeeDoa.giveWagesToEmployee(n, amount);
 						System.out.println("Wages given to Employee Successfully");
-					} catch (SomethingWentWrong e) {
+					} catch (SomethingWentWrong | DataNotFoundException e) {
 						System.out.println(e.getMessage());
 					}
 					break;
