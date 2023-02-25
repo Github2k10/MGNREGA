@@ -189,6 +189,7 @@ public class AfterLogin {
 					} catch (SomethingWentWrong e) {
 						System.out.println(e.getMessage());
 					}
+					break;
 				
 			case 8:
 
