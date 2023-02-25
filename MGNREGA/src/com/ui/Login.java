@@ -38,8 +38,7 @@ public class Login {
 		try {
 			GPMDao.login(id, password, scanner);
 		} catch (DataNotFoundException | SomethingWentWrong e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 }

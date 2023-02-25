@@ -21,9 +21,10 @@ public class AfterLogin {
 		
 		do {
 			System.out.println(
-					"1. Create new Employee\n2. View details of Employee\n3. delete employee\n4. "
+					"\n1. Create new Employee\n2. View details of Employee\n3. delete employee\n4. "
 					+ "Assign Employee to a project\n5. Give wages to employee\n6. "
-					+ "View total number of days worked in the project and also their wages\n7. Logut");
+					+ "View total number of days worked in the project and also their wages\n7. Logut\n");
+			System.out.print("Enter selection: ");
 			boolean flag = false;
 
 			int choise = Integer.parseInt(scanner.nextLine());
@@ -34,6 +35,9 @@ public class AfterLogin {
 
 				try {
 					EmployeeDoa.createEmployee(employee);
+					System.out.println("\n\n***************************************************");
+					System.out.println("       Employee Created Successfully         ");
+					System.out.println("***************************************************");
 				} catch (SomethingWentWrong e) {
 					System.out.println(e.getMessage());
 				}
