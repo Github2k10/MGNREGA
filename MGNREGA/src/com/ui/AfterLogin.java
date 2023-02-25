@@ -132,7 +132,6 @@ public class AfterLogin {
 				try {
 					List<Project> list = ProjectDoa.projectList();
 
-
 					System.out.println("\n**************************************************************\n");
 					list.forEach(System.out::println);
 					System.out.println("\n**************************************************************");
@@ -153,12 +152,14 @@ public class AfterLogin {
 					}
 					break;
 
-			case 4: System.out.println("Enter project Id: ");
+			case 4: System.out.print("\nEnter project Id: ");
 					n = Integer.parseInt(scanner.nextLine());
 					
 					try {
 						ProjectDoa.deleteproject(n);
-						System.out.println("Project Deleted Successfully");
+						System.out.println("\n\n****************************************************************");
+						System.out.println("                Project Deleted Successfully               ");
+						System.out.println("****************************************************************");
 					} catch (SomethingWentWrong | DataNotFoundException e) {
 						System.out.println(e.getMessage());
 					}
@@ -166,54 +167,65 @@ public class AfterLogin {
 
 			case 5: try {
 						List<GPM> list = GPMDao.getListOffGPM();
+						System.out.println("\n****************************************************************************************************************************************************\n");
 						list.forEach(System.out::println);
+						System.out.println("\n****************************************************************************************************************************************************");
 						
 					} catch (SomethingWentWrong | DataNotFoundException e) {
 						System.out.println(e.getMessage());
 					}
 					break;
 					
-			case 6: System.out.println("Enter Gram Panchayat Member Id: ");
+			case 6: System.out.print("\nEnter Gram Panchayat Member Id: ");
 					n = Integer.parseInt(scanner.nextLine());
 					
 					try {
 						GPMDao.deleteGPM(n);
-						System.out.println("Gram Panchayat Deleted successfully");
+						System.out.println("\n\n****************************************************************");
+						System.out.println("              Gram Panchayat Deleted successfully             ");
+						System.out.println("****************************************************************");
 					} catch (SomethingWentWrong e) {
 						System.out.println(e.getMessage());
 					}
 					break;
 				
-			case 7: System.out.println("Enter Gram Panchayat Member Id: ");
+			case 7: System.out.print("\nEnter Gram Panchayat Member Id: ");
 					n = Integer.parseInt(scanner.nextLine());
 					
-					System.out.println("Enter Gram Panchayat Member Id: ");
+					System.out.print("Enter Gram Panchayat Member Id: ");
 					int p = Integer.parseInt(scanner.nextLine());
 					
 					try {
 						GPMDao.assignProjectToGPM(n, p);
-						System.out.println("Project Assigned to Gram Panchayat");
+						System.out.println("\n\n****************************************************************");
+						System.out.println("              Project Assigned to Gram Panchayat             ");
+						System.out.println("****************************************************************");
 					} catch (SomethingWentWrong e) {
 						System.out.println(e.getMessage());
 					}
 					break;
 				
-			case 8: System.out.println("Enter Project Id: ");
+			case 8: System.out.print("\nEnter Project Id: ");
 					n = Integer.parseInt(scanner.nextLine());
 					
 					try {
+						System.out.println("\n**************************************************************\n");
 						EmployeeDoa.listEmployeeWorkinigOnProject(n);
+						System.out.println("\n**************************************************************");
 					} catch (SomethingWentWrong | DataNotFoundException e) {
 						System.out.println(e.getMessage());
 					}
 					break;
 
 			case 9: flag = true;
-					System.out.print("Logut successfully as BDO");
-					break;
+					System.out.println("\n\n****************************************************************");
+					System.out.println("                 Logut successfully as BDO                ");
+					System.out.println("****************************************************************\n");
+							break;
 					
-			default:
-				System.out.println("Unexpected value: " + choise);
+			default: System.out.println("\n\n****************************************************************");
+			 		 System.out.println("                    Unexpected value: " + choise + "                ");
+	  	 			 System.out.println("****************************************************************\n");
 			}
 
 			if (flag)

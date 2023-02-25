@@ -166,6 +166,12 @@ public class GPMDao {
 			statement.setInt(2, gpmid);
 			
 			statement.executeUpdate();
+			
+			PreparedStatement statement2 = connection.prepareStatement("update project set gpmid = ? where pid = ?");
+			statement2.setInt(1, gpmid);
+			statement2.setInt(2, pid);
+			
+			statement2.executeUpdate();
 		} catch (SQLException e) {
 			
 		} finally {
