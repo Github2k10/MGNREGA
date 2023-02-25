@@ -112,6 +112,8 @@ public class AfterLogin {
 					"\n1. Create Project\n2. view List of Project\n3. Create new GPM\n4. Delete project\n5. "
 					+ "View all the GPM\n6. delete GPM\n7. Allocate project to GPM\n8. "
 					+ "See list of employee working on that project and their wages\n9. Logout");
+			
+			System.out.print("\nEnter selection: ");
 			boolean flag = false;
 
 			int choise = Integer.parseInt(scanner.nextLine());
@@ -191,12 +193,20 @@ public class AfterLogin {
 					}
 					break;
 				
-			case 8:
+			case 8: System.out.println("Enter Project Id: ");
+					n = Integer.parseInt(scanner.nextLine());
+					
+					try {
+						EmployeeDoa.listEmployeeWorkinigOnProject(n);
+					} catch (SomethingWentWrong | DataNotFoundException e) {
+						System.out.println(e.getMessage());
+					}
+					break;
 
-			case 9:
-				flag = true;
-				System.out.print("Logut successfully as BDO");
-				break;
+			case 9: flag = true;
+					System.out.print("Logut successfully as BDO");
+					break;
+					
 			default:
 				System.out.println("Unexpected value: " + choise);
 			}

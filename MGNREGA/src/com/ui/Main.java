@@ -9,8 +9,15 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		
 		do {
-			System.out.println("1. Login as BDO\n2. Login as Gram Panchayat Member\n99. Exit");
-			int choice = Integer.parseInt(scanner.nextLine());
+			System.out.println("1. Login as BDO\n2. Login as Gram Panchayat Member\n99. Exit\n");
+			System.out.print("Enter selection: ");
+			Integer choice = 98;
+			try {
+				choice = Integer.parseInt(scanner.nextLine());
+			} catch(Exception ex) {
+				
+			}
+			
 			boolean flag = false;
 			String userId = null;
 			String password = null;
@@ -19,9 +26,9 @@ public class Main {
 			case 99 : flag = true;
 					 break;
 			
-			case 1 : System.out.println("Enter DBO userId: ");
+			case 1 : System.out.print("\nEnter DBO userId: ");
 					 userId = scanner.nextLine();
-					 System.out.println("Enter DBO password: ");
+					 System.out.print("Enter DBO password: ");
 					 password = scanner.nextLine();
 					 
 					 Login.DBOLogin(userId, password, scanner);

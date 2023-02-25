@@ -11,7 +11,8 @@ public class EmployeeImp implements Employee{
 	private int epid;
 	private LocalDate joiningDate ;
 	private double wages;
-	
+	private int workingDays;
+
 	public EmployeeImp() {}
 
 	public EmployeeImp(String name, String email, String contact, LocalDate dob) {
@@ -83,6 +84,14 @@ public class EmployeeImp implements Employee{
 
 	public void setDob(LocalDate dob) {
 		this.dob = dob;
+	}
+	
+	public int getWorkingDays() {
+		return workingDays;
+	}
+
+	public void setWorkingDays(int workingDays) {
+		this.workingDays = workingDays;
 	}
 
 	@Override

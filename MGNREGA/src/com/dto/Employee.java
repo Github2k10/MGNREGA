@@ -35,4 +35,8 @@ public interface Employee {
 	
 	public void setWages(double wages);
 	
+	public int getWorkingDays();
+
+	public void setWorkingDays(int workingDays);
+	
 }
