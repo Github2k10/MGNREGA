@@ -23,10 +23,14 @@ public class Login {
 				System.out.println("******************************************************************");
 				AfterLogin.forBDO(scanner);
 			} else {
-				System.out.println("Password Wrong!!!");
+				System.out.println("\n\n**********************************");
+				System.out.println("        Password Wrong!!!           ");
+				System.out.println("**********************************\n");
 			}
 		} else {
-			System.out.println("User ID wrong");
+			System.out.println("\n\n******************************");
+			System.out.println("        User ID wrong           ");
+			System.out.println("******************************\n");
 		}
 	}
 	

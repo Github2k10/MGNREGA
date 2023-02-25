@@ -132,7 +132,10 @@ public class AfterLogin {
 				try {
 					List<Project> list = ProjectDoa.projectList();
 
+
+					System.out.println("\n**************************************************************\n");
 					list.forEach(System.out::println);
+					System.out.println("\n**************************************************************");
 				} catch (DataNotFoundException | SomethingWentWrong e) {
 					e.printStackTrace();
 				}
@@ -142,7 +145,9 @@ public class AfterLogin {
 					
 					try {
 						GPMDao.createGPM(gpm);
-						System.out.println("Gram Pancahayat Member created successfully");
+						System.out.println("\n\n****************************************************************");
+						System.out.println("       Gram Pancahayat Member created successfully         ");
+						System.out.println("****************************************************************");
 					} catch (SomethingWentWrong e) {
 						System.out.println(e.getMessage());
 					}

@@ -56,6 +56,6 @@ public class ProjectImp implements Project{
 
 	@Override
 	public String toString() {
-		return "ProjectImp Id = " + pid + ", Name = " + pname + ", Cost = " + pcost + ", Duration = " + pduration;
+		return "Project Id = " + pid + ", Name = " + pname + ", Cost = " + pcost + ", Duration = " + pduration;
 	}
 }

@@ -46,9 +46,9 @@ public class ProjectDoa {
 			statement.setDouble(2, project.getPcost());
 			
 			statement.executeUpdate();
-			System.out.println("********************************************");
+			System.out.println("\n\n**************************************************");
 			System.out.println("       Project Created Successfully         ");
-			System.out.println("********************************************");
+			System.out.println("***************************************************");
 		} catch (SQLException e) {
 			throw new SomethingWentWrong();
 		} finally {

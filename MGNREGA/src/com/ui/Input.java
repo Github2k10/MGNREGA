@@ -33,22 +33,22 @@ public class Input {
 	public static GPM forGPM(Scanner scanner) {
 		GPM gpm = new GPMImp();
 		
-		System.out.println("Enter Gram Panchayat Member Name: ");
+		System.out.print("\nEnter Gram Panchayat Member Name: ");
 		gpm.setName(scanner.nextLine());
 		
-		System.out.println("Enter Gram Panchayat Member Email Id: ");
+		System.out.print("Enter Gram Panchayat Member Email Id: ");
 		gpm.setEmail(scanner.nextLine());
 		
-		System.out.println("Enter Gram Panchayat Member Contac No:");
+		System.out.print("Enter Gram Panchayat Member Contac No:");
 		gpm.setContact(scanner.nextLine());
 		
-		System.out.println("Enter Gram Panchayat Member District: ");
+		System.out.print("Enter Gram Panchayat Member District: ");
 		gpm.setDistrict(scanner.nextLine());
 		
-		System.out.println("Enter Gram Panchayat Member State: ");
+		System.out.print("Enter Gram Panchayat Member State: ");
 		gpm.setState(scanner.nextLine());
 		
-		System.out.println("Set Password(Max 12 digits): ");
+		System.out.print("Set Password(Max 12 digits): ");
 		gpm.setPassword(scanner.nextLine());
 		
 		return gpm;
