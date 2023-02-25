@@ -8,6 +8,7 @@ import com.dao.GPMDao;
 import com.dao.ProjectDoa;
 import com.dto.Employee;
 import com.dto.GPM;
+import com.dto.GPMImp;
 import com.dto.Project;
 import com.exception.DataNotFoundException;
 import com.exception.SomethingWentWrong;
@@ -83,6 +84,7 @@ public class AfterLogin {
 					} catch (SomethingWentWrong e) {
 						System.out.println(e.getMessage());
 					}
+					break;
 				
 			case 6: 
 
@@ -149,13 +151,15 @@ public class AfterLogin {
 					try {
 						ProjectDoa.deleteproject(n);
 						System.out.println("Project Deleted Successfully");
-					} catch (SomethingWentWrong e) {
+					} catch (SomethingWentWrong | DataNotFoundException e) {
 						System.out.println(e.getMessage());
 					}
 					break;
 
 			case 5: try {
-						GPMDao.getListOffGPM();
+						List<GPM> list = GPMDao.getListOffGPM();
+						list.forEach(System.out::println);
+						
 					} catch (SomethingWentWrong | DataNotFoundException e) {
 						System.out.println(e.getMessage());
 					}
