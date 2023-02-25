@@ -11,8 +11,8 @@ public class Login {
 	private static final String DBOpassword;
 	
 	static {
-		DBOuserid = "abc";
-		DBOpassword = "123";
+		DBOuserid = "admin";
+		DBOpassword = "admin";
 	}
 	
 	public static void DBOLogin(String id, String password, Scanner scanner) {

@@ -89,7 +89,7 @@ public class ProjectDoa {
 		return list;
 	}
 	
-	public static boolean deleteproject(Integer id) throws SomethingWentWrong {
+	public static boolean deleteproject(Integer id) throws SomethingWentWrong, DataNotFoundException {
 		Connection connection = null;
 		
 		try {
@@ -97,9 +97,9 @@ public class ProjectDoa {
 			
 			PreparedStatement statement = connection.prepareStatement("delete from project where pid = ?");
 			statement.setInt(1, id);
-			ResultSet  resultSet = statement.executeQuery();
+			statement.executeUpdate();
 		} catch (SQLException e) {
-			
+			throw new DataNotFoundException("Project Not found");
 		} finally {
 			try {
 				ConnectToDataBase.closeConnection(connection);

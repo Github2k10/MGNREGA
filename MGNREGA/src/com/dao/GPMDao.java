@@ -141,7 +141,7 @@ public class GPMDao {
 			
 			PreparedStatement statement = connection.prepareStatement("delete from gpm where gid = ?");
 			statement.setInt(1, id);
-			ResultSet  resultSet = statement.executeQuery();
+			statement.executeUpdate();
 		} catch (SQLException e) {
 			
 		} finally {
