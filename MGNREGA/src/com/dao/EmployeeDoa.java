@@ -109,11 +109,7 @@ public class EmployeeDoa {
 			PreparedStatement statement = connection.prepareStatement("delete from employee where eid = ?");
 			statement.setInt(1, eid);
 			
-			ResultSet  resultSet = statement.executeQuery();
-			resultSet.next();
-			
-			
-			System.out.println(resultSet);
+			statement.executeUpdate();
 		} catch (SQLException e) {
 			throw new SomethingWentWrong();
 		} finally {
@@ -127,19 +123,19 @@ public class EmployeeDoa {
 	}
 	
 	
-	public static boolean giveWagesToEmployee(Integer id, Double amount) throws SomethingWentWrong {
+	public static boolean giveWagesToEmployee(Integer id, Double amount) throws SomethingWentWrong, DataNotFoundException {
 		Connection connection = null;
 		
 		try {
 			connection = ConnectToDataBase.makeConnnection();
 			
-			PreparedStatement statement = connection.prepareStatement("update gpm set pid = ? where gid = ?");
+			PreparedStatement statement = connection.prepareStatement("update employee set wages = ? where eid = ?");
 			statement.setDouble(1, amount);
 			statement.setInt(2, id);
 			
 			statement.executeUpdate();
 		} catch (SQLException e) {
-			
+			throw new DataNotFoundException("Employee Not found with this Id");
 		} finally {
 			try {
 				ConnectToDataBase.closeConnection(connection);
