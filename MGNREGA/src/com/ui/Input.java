@@ -58,10 +58,10 @@ public class Input {
 	public static Project forProject(Scanner scanner) {
 		Project project = new ProjectImp();
 		
-		System.out.println("Enter Project Name: ");
+		System.out.print("Enter Project Name: ");
 		project.setPname(scanner.nextLine());
 		
-		System.out.println("Enter Project Cost to build: ");
+		System.out.print("Enter Project Cost to build: ");
 		project.setPcost(Double.parseDouble(scanner.nextLine()));
 		
 		return project;
