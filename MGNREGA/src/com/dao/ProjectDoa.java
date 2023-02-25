@@ -23,6 +23,7 @@ public class ProjectDoa {
 		while(resultSet.next()) {
 			Project project = new ProjectImp();
 			
+			
 			project.setPid(resultSet.getInt("pid"));
 			project.setPname(resultSet.getString("pname"));
 			project.setPcost(resultSet.getDouble("pcost"));
