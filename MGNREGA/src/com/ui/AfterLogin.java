@@ -43,7 +43,7 @@ public class AfterLogin {
 				}
 				break;
 
-			case 2: System.out.println("Enter Employee Id: ");
+			case 2: System.out.print("Enter Employee Id: ");
 					try {
 						n = Integer.parseInt(scanner.nextLine());
 					} catch(Exception ex) {
@@ -53,13 +53,16 @@ public class AfterLogin {
 					try {
 						Employee emp =  EmployeeDoa.viewDetails(n);
 						
+
+						System.out.println("\n\n***************************************************\n");
 						System.out.println(emp.toString());
+						System.out.println("\n***************************************************");
 					} catch (DataNotFoundException |SomethingWentWrong e) {
 						System.out.println(e.getMessage());
 					}
 					break;
 					
-			case 3: System.out.println("Enter Employee Id: ");
+			case 3: System.out.print("Enter Employee Id: ");
 					try {
 						n = Integer.parseInt(scanner.nextLine());
 					} catch(Exception ex) {
@@ -73,7 +76,7 @@ public class AfterLogin {
 					}
 					break;
 				
-			case 4: System.out.println("Enter Employee Id: ");
+			case 4: System.out.print("Enter Employee Id: ");
 					try {
 						n = Integer.parseInt(scanner.nextLine());
 					} catch(Exception ex) {
@@ -81,7 +84,7 @@ public class AfterLogin {
 						continue;
 					}
 					
-					System.out.println("Enter Project Id: ");
+					System.out.print("Enter Project Id: ");
 				    try {
 						p = Integer.parseInt(scanner.nextLine());
 					} catch(Exception ex) {
@@ -91,13 +94,15 @@ public class AfterLogin {
 				    
 					try {
 						EmployeeDoa.assignProjectToEmployee(n, p);
-						System.out.println("Project assigned succuessfully to Employee");
+						System.out.println("\n\n**********************************************************");
+						System.out.println("         Project assigned succuessfully to Employee");
+						System.out.println("**********************************************************");
 					} catch (SomethingWentWrong e) {
 						System.out.println(e.getMessage());
 					}
 					break;
 				
-			case 5: System.out.println("Enter Employee Id: ");
+			case 5: System.out.print("Enter Employee Id: ");
 					try {
 						n = Integer.parseInt(scanner.nextLine());
 					} catch(Exception ex) {
@@ -105,12 +110,14 @@ public class AfterLogin {
 						continue;
 					}
 					
-					System.out.println("Enter Project Id: ");
+					System.out.print("Enter Project Id: ");
 				    Double amount = Double.parseDouble(scanner.nextLine());
 				
 					try {
 						EmployeeDoa.giveWagesToEmployee(n, amount);
-						System.out.println("Wages given to Employee Successfully");
+						System.out.println("\n\n**********************************************************");
+						System.out.println("         Wages given to Employee Successfully");
+						System.out.println("**********************************************************");
 					} catch (SomethingWentWrong | DataNotFoundException e) {
 						System.out.println(e.getMessage());
 					}
@@ -123,7 +130,7 @@ public class AfterLogin {
 				break;
 			
 			default: System.out.println("\n\n****************************************************************");
-	 		 		 System.out.println("                    Unexpected value: " + choise + "                ");
+	 		 		 System.out.println("                    Unexpected value: " + choise);
 	 		 		 System.out.println("****************************************************************\n");
 	 		 		 
 			}
