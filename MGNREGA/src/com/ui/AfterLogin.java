@@ -125,9 +125,11 @@ public class AfterLogin {
 				
 			case 6: 
 
-			case 7:
-				flag = true;
-				break;
+			case 7: flag = true;
+					System.out.println("\n\n****************************************************************");
+					System.out.println("                 Logut successfully as GPM                ");
+					System.out.println("****************************************************************\n");
+					break;
 			
 			default: System.out.println("\n\n****************************************************************");
 	 		 		 System.out.println("                    Unexpected value: " + choise);

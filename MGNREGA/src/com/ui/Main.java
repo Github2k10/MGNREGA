@@ -51,8 +51,9 @@ public class Main {
 		} while (true);
 		
 		
-		
-		System.out.print("Thank you for visting");
+		System.out.println("\n\n****************************************************************");
+		System.out.println("                  Thank you for visting");
+		System.out.println("****************************************************************\n");
 		scanner.close();
 	}
 
