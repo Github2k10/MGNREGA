@@ -181,8 +181,12 @@ public class AfterLogin {
 					}
 					break;
 
-			case 4: System.out.print("\nEnter project Id: ");
-					n = Integer.parseInt(scanner.nextLine());
+			case 4: System.out.print("\nEnter project Id: ");try {
+						n = Integer.parseInt(scanner.nextLine());
+					} catch(Exception ex) {
+						System.out.println("Invalid Input!!!");
+						continue;
+					}
 					
 					try {
 						ProjectDoa.deleteproject(n);
