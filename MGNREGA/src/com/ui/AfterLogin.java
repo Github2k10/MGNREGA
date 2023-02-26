@@ -121,8 +121,11 @@ public class AfterLogin {
 			case 7:
 				flag = true;
 				break;
-			default:
-				System.out.println("Unexpected value: " + choise);
+			
+			default: System.out.println("\n\n****************************************************************");
+	 		 		 System.out.println("                    Unexpected value: " + choise + "                ");
+	 		 		 System.out.println("****************************************************************\n");
+	 		 		 
 			}
 
 			if (flag)
