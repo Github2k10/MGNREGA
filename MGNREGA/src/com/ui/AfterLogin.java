@@ -21,9 +21,9 @@ public class AfterLogin {
 		
 		do {
 			System.out.println(
-					"\n1. Create new Employee\n2. View details of Employee\n3. delete employee\n4. "
-					+ "Assign Employee to a project\n5. Give wages to employee\n6. "
-					+ "View total number of days worked in the project and also their wages\n7. Logut\n");
+					"\n1. Create new Employee\n2. View details of Employee\n3. View List of all employees\n4. delete employee\n5. "
+					+ "Assign Employee to a project\n6. Give wages to employee\n7. "
+					+ "View total number of days worked in the project and also their wages\n8. Logut\n");
 			System.out.print("Enter selection: ");
 			boolean flag = false;
 
@@ -62,7 +62,18 @@ public class AfterLogin {
 					}
 					break;
 					
-			case 3: System.out.print("Enter Employee Id: ");
+			case 3: try {
+					List<Employee> list = EmployeeDoa.getListOffEmployee();
+	
+					System.out.println("\n***********************************************************************************************\n");
+					list.forEach(System.out::println);
+					System.out.println("\n***********************************************************************************************");
+					} catch (DataNotFoundException | SomethingWentWrong e) {
+						e.printStackTrace();
+					}
+					break;
+					
+			case 4: System.out.print("Enter Employee Id: ");
 					try {
 						n = Integer.parseInt(scanner.nextLine());
 					} catch(Exception ex) {
@@ -76,7 +87,7 @@ public class AfterLogin {
 					}
 					break;
 				
-			case 4: System.out.print("Enter Employee Id: ");
+			case 5: System.out.print("Enter Employee Id: ");
 					try {
 						n = Integer.parseInt(scanner.nextLine());
 					} catch(Exception ex) {
@@ -102,7 +113,7 @@ public class AfterLogin {
 					}
 					break;
 				
-			case 5: System.out.print("Enter Employee Id: ");
+			case 6: System.out.print("Enter Employee Id: ");
 					try {
 						n = Integer.parseInt(scanner.nextLine());
 					} catch(Exception ex) {
@@ -123,9 +134,9 @@ public class AfterLogin {
 					}
 					break;
 				
-			case 6: 
+			case 7: 
 
-			case 7: flag = true;
+			case 8: flag = true;
 					System.out.println("\n\n****************************************************************");
 					System.out.println("                 Logut successfully as GPM                ");
 					System.out.println("****************************************************************\n");

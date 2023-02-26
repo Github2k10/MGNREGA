@@ -10,6 +10,7 @@ import java.util.List;
 
 import com.dto.Employee;
 import com.dto.EmployeeImp;
+import com.dto.GPM;
 import com.exception.DataNotFoundException;
 import com.exception.SomethingWentWrong;
 
@@ -243,5 +244,33 @@ public class EmployeeDoa {
 		}
 		
 		return true;
+	}
+	
+	public static List<Employee> getListOffEmployee() throws SomethingWentWrong, DataNotFoundException{
+		Connection connection = null;
+		List<Employee> list = null;
+		
+		try {
+			connection = ConnectToDataBase.makeConnnection();
+			
+			PreparedStatement statement = connection.prepareStatement("select * from employee");
+			
+			ResultSet resultSet = statement.executeQuery();
+			
+			if(isResultSetEmpty(resultSet)) {
+				throw new DataNotFoundException("Employee table is empty");
+			}
+			
+			list = getList(resultSet);
+		} catch (SQLException e) {
+			
+		} finally {
+			try {
+				ConnectToDataBase.closeConnection(connection);
+			} catch (SQLException e) {
+				throw new SomethingWentWrong();
+			}
+		}
+		return list;
 	}
 }
