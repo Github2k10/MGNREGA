@@ -34,9 +34,9 @@ public class Main {
 					 Login.DBOLogin(userId, password, scanner);
 					 break;
 			
-			case 2 : System.out.println("Enter GPM userId: ");
+			case 2 : System.out.print("Enter GPM userId: ");
 					 userId = scanner.nextLine();
-					 System.out.println("Enter GPM password: ");
+					 System.out.print("Enter GPM password: ");
 					 password = scanner.nextLine();	
 					 
 					 Login.GPMLogin(userId, password, scanner);

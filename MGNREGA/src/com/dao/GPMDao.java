@@ -57,7 +57,9 @@ public class GPMDao {
 			String passwordString = resultset.getString("password");
 			
 			if(passwordString.equals(password)) {
-				 System.out.println("Login successfull as GPM\n\n");
+				System.out.println("\n\n******************************************************************");
+				System.out.println("          Login successfull as Gram Panchayat Member            ");
+				System.out.println("******************************************************************");
 				 AfterLogin.forGPM(scanner);
 			} else {
 				System.out.println("Wrong password \n\n");

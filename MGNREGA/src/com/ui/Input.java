@@ -15,16 +15,16 @@ public class Input {
 	public static Employee forEmployee(Scanner scanner) {
 		Employee employee = new EmployeeImp();
 		
-		System.out.println("Enter Employee Name: ");
+		System.out.print("Enter Employee Name: ");
 		employee.setName(scanner.nextLine());
 		
-		System.out.println("Enter Employee Email Id: ");
+		System.out.print("Enter Employee Email Id: ");
 		employee.setEmail(scanner.nextLine());
 		
-		System.out.println("Enter Employee Contac No:");
+		System.out.print("Enter Employee Contac No:");
 		employee.setContact(scanner.nextLine());
 		
-		System.out.println("Enter Date of Birth(YYYY-MM-DD): ");
+		System.out.print("Enter Date of Birth(YYYY-MM-DD): ");
 		employee.setDob(LocalDate.parse(scanner.nextLine()));
 		
 		return employee;
