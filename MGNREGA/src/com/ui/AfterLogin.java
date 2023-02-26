@@ -44,7 +44,12 @@ public class AfterLogin {
 				break;
 
 			case 2: System.out.println("Enter Employee Id: ");
-					n = Integer.parseInt(scanner.nextLine());
+					try {
+						n = Integer.parseInt(scanner.nextLine());
+					} catch(Exception ex) {
+						System.out.println("Invalid Input!!!");
+						continue;
+					}
 					try {
 						Employee emp =  EmployeeDoa.viewDetails(n);
 						
@@ -55,7 +60,12 @@ public class AfterLogin {
 					break;
 					
 			case 3: System.out.println("Enter Employee Id: ");
-					n = Integer.parseInt(scanner.nextLine());
+					try {
+						n = Integer.parseInt(scanner.nextLine());
+					} catch(Exception ex) {
+						System.out.println("Invalid Input!!!");
+						continue;
+					}
 					try {
 						EmployeeDoa.deleteEmployee(n);
 					} catch (SomethingWentWrong e) {
@@ -64,10 +74,20 @@ public class AfterLogin {
 					break;
 				
 			case 4: System.out.println("Enter Employee Id: ");
-					n = Integer.parseInt(scanner.nextLine());
+					try {
+						n = Integer.parseInt(scanner.nextLine());
+					} catch(Exception ex) {
+						System.out.println("Invalid Input!!!");
+						continue;
+					}
 					
 					System.out.println("Enter Project Id: ");
-				    p = Integer.parseInt(scanner.nextLine());
+				    try {
+						p = Integer.parseInt(scanner.nextLine());
+					} catch(Exception ex) {
+						System.out.println("Invalid Input!!!");
+						continue;
+					}
 				    
 					try {
 						EmployeeDoa.assignProjectToEmployee(n, p);
@@ -78,7 +98,12 @@ public class AfterLogin {
 					break;
 				
 			case 5: System.out.println("Enter Employee Id: ");
-					n = Integer.parseInt(scanner.nextLine());
+					try {
+						n = Integer.parseInt(scanner.nextLine());
+					} catch(Exception ex) {
+						System.out.println("Invalid Input!!!");
+						continue;
+					}
 					
 					System.out.println("Enter Project Id: ");
 				    Double amount = Double.parseDouble(scanner.nextLine());
