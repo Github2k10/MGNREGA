@@ -54,9 +54,9 @@ public class AfterLogin {
 						Employee emp =  EmployeeDoa.viewDetails(n);
 						
 
-						System.out.println("\n\n***************************************************\n");
+						System.out.println("\n\n******************************************************************************************************\n");
 						System.out.println(emp.toString());
-						System.out.println("\n***************************************************");
+						System.out.println("\n******************************************************************************************************");
 					} catch (DataNotFoundException |SomethingWentWrong e) {
 						System.out.println(e.getMessage());
 					}
@@ -110,7 +110,7 @@ public class AfterLogin {
 						continue;
 					}
 					
-					System.out.print("Enter Project Id: ");
+					System.out.print("Enter Amount Id: ");
 				    Double amount = Double.parseDouble(scanner.nextLine());
 				
 					try {

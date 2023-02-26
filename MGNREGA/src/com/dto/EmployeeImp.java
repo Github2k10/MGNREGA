@@ -97,7 +97,7 @@ public class EmployeeImp implements Employee{
 	@Override
 	public String toString() {
 		return "Employee Id = " + eid + ", Name = " + name + ", Emai = " + email + ", Contact = " + contact + 
-			   ", DOB = " + dob + ", Joining Date = " + joiningDate + ", Wages = " + wages + ", Project id = " + epid;
+			   ", DOB = " + dob + ", \nJoining Date = " + joiningDate + ", Working Days = " + workingDays + ", Wages = " + wages +", Project id = " + epid;
 	}
 	
 	

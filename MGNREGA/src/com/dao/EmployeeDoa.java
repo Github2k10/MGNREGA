@@ -14,6 +14,40 @@ import com.exception.DataNotFoundException;
 import com.exception.SomethingWentWrong;
 
 public class EmployeeDoa {
+	
+	static {
+		Connection connection = null;
+		
+		try {
+			connection = ConnectToDataBase.makeConnnection();
+			
+			PreparedStatement statement = connection.prepareStatement("Select eid from employee");
+			ResultSet resultSet = statement.executeQuery();
+			
+			if(isResultSetEmpty(resultSet)) {
+				throw new DataNotFoundException("Employee Not found");
+			}
+			
+			
+			while(resultSet.next()) {
+				int n = resultSet.getInt("eid");
+				PreparedStatement statement2 = connection.prepareStatement("update employee set work_days = CURDATE() - joining_date where eid = ?");
+				statement2.setInt(1, n);
+				
+				statement2.executeUpdate();
+			}
+			
+		} catch (SQLException | DataNotFoundException e) {
+			
+		} finally {
+			try {
+				ConnectToDataBase.closeConnection(connection);
+			} catch (SQLException e) {
+				
+			}
+		}
+	}
+	
 	private static boolean isResultSetEmpty(ResultSet resultSet) throws SQLException {
 		return (!resultSet.isBeforeFirst() && resultSet.getRow() == 0) ? true : false;
 	}
@@ -89,6 +123,7 @@ public class EmployeeDoa {
 			employee.setJoiningDate(Date.valueOf(resultSet.getDate("joining_date") + "").toLocalDate());
 			employee.setWages(resultSet.getDouble("wages"));
 			employee.setEpid(resultSet.getInt("epid"));
+			employee.setWorkingDays(resultSet.getInt("work_days"));
 			
 		} catch (SQLException e) {
 			throw new DataNotFoundException("Employee Not found with this Id");
