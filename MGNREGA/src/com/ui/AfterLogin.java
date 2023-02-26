@@ -209,8 +209,12 @@ public class AfterLogin {
 					}
 					break;
 					
-			case 6: System.out.print("\nEnter Gram Panchayat Member Id: ");
-					n = Integer.parseInt(scanner.nextLine());
+			case 6: System.out.print("\nEnter Gram Panchayat Member Id: ");try {
+						n = Integer.parseInt(scanner.nextLine());
+					} catch(Exception ex) {
+						System.out.println("Invalid Input!!!");
+						continue;
+					}
 					
 					try {
 						GPMDao.deleteGPM(n);
