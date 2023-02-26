@@ -226,11 +226,19 @@ public class AfterLogin {
 					}
 					break;
 				
-			case 7: System.out.print("\nEnter Gram Panchayat Member Id: ");
-					n = Integer.parseInt(scanner.nextLine());
+			case 7: System.out.print("\nEnter Gram Panchayat Member Id: ");try {
+						n = Integer.parseInt(scanner.nextLine());
+					} catch(Exception ex) {
+						System.out.println("Invalid Input!!!");
+						continue;
+					}
 					
-					System.out.print("Enter Gram Panchayat Member Id: ");
-					int p = Integer.parseInt(scanner.nextLine());
+					System.out.print("Enter Gram Panchayat Member Id: ");try {
+						int p = Integer.parseInt(scanner.nextLine());
+					} catch(Exception ex) {
+						System.out.println("Invalid Input!!!");
+						continue;
+					}
 					
 					try {
 						GPMDao.assignProjectToGPM(n, p);
