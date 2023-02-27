@@ -22,12 +22,16 @@ public class AfterLogin {
 		do {
 			System.out.println(
 					"\n1. Create new Employee\n2. View details of Employee\n3. View List of all employees\n4. delete employee\n5. "
-					+ "Assign Employee to a project\n6. Give wages to employee\n7. "
-					+ "View total number of days worked in the project and also their wages\n8. Logut\n");
+					+ "Assign Employee to a project\n6. Give wages to employee\n99. Logut\n");
 			System.out.print("Enter selection: ");
 			boolean flag = false;
 
-			int choise = Integer.parseInt(scanner.nextLine());
+			Integer choise = 98;
+			try {
+				choise = Integer.parseInt(scanner.nextLine());
+			} catch(Exception ex) {
+				
+			}
 
 			switch (choise) {
 			case 1:
@@ -134,16 +138,15 @@ public class AfterLogin {
 					}
 					break;
 				
-			case 7: 
 
-			case 8: flag = true;
+			case 99: flag = true;
 					System.out.println("\n\n****************************************************************");
 					System.out.println("                 Logut successfully as GPM                ");
 					System.out.println("****************************************************************\n");
 					break;
 			
 			default: System.out.println("\n\n****************************************************************");
-	 		 		 System.out.println("                    Unexpected value: " + choise);
+	 		 		 System.out.println("                    Unexpected value");
 	 		 		 System.out.println("****************************************************************\n");
 	 		 		 
 			}
@@ -163,12 +166,17 @@ public class AfterLogin {
 			System.out.println(
 					"\n1. Create Project\n2. view List of Project\n3. Create new GPM\n4. Delete project\n5. "
 					+ "View all the GPM\n6. delete GPM\n7. Allocate project to GPM\n8. "
-					+ "See list of employee working on that project and their wages\n9. Logout");
+					+ "See list of employee working on that project and their wages\n99. Logout");
 			
 			System.out.print("\nEnter selection: ");
 			boolean flag = false;
-
-			int choise = Integer.parseInt(scanner.nextLine());
+			
+			Integer choise = 98;
+			try {
+				choise = Integer.parseInt(scanner.nextLine());
+			} catch(Exception ex) {
+				
+			}
 
 			switch (choise) {
 			case 1:
@@ -293,14 +301,14 @@ public class AfterLogin {
 					}
 					break;
 
-			case 9: flag = true;
+			case 99: flag = true;
 					System.out.println("\n\n****************************************************************");
 					System.out.println("                 Logut successfully as BDO                ");
 					System.out.println("****************************************************************\n");
 							break;
 					
 			default: System.out.println("\n\n****************************************************************");
-			 		 System.out.println("                    Unexpected value: " + choise + "                ");
+			 		 System.out.println("                    Unexpected value");
 	  	 			 System.out.println("****************************************************************\n");
 			}
 
