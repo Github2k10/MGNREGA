@@ -8,8 +8,10 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		
+		System.out.println("=============================Welcome to MGNREGA Project=============================\n");
+		
 		do {
-			System.out.println("1. Login as BDO\n2. Login as Gram Panchayat Member\n99. Exit\n");
+			System.out.println("1. Login as Block Development Officer\n2. Login as Gram Panchayat Member\n99. Exit\n");
 			System.out.print("Enter selection: ");
 			Integer choice = 98;
 			try {
