@@ -1,7 +1,7 @@
 # MGNREGA
 
 <p align="center">
-  <img width="80%" src="https://raw.githubusercontent.com/Binodgith/MGNREGA/main/Materials/download2.jpg">
+  <img width="80%" src="https://github.com/Github2k10/deranged-bikes-7325/blob/main/download2.jpg">
 </p
 
 >The MGNREGA was initiated with the objective of “enhancing livelihood security in rural areas by providing at least 100 days of guaranteed wage employment in a financial year, to every household whose adult members volunteer to do unskilled manual work”.
