@@ -17,7 +17,7 @@
 
 
 
-# MGNREGA - mushy-fairies-7744
+# MGNREGA - deranged-bikes-7325
 
 > The MGNREGA is an java application designed to provide BDO and Gram Panchayat Member (GPM) of Block Office with a personalized easy-to-utilize user experience for creating, assigning and managing the project and employee . It stores GPM, Employee and project's data records, project assignments, wage/day, Total receivable amount till current date , and other information.
 >
