@@ -14,11 +14,6 @@
 > A project is created by BDO,which  is assigned to corresponding Gram panchayat Members. Gram Panchayat member has acccess to assign to Employees to Complete the Project.
 
 
-
-
-
-# MGNREGA - deranged-bikes-7325
-
 > The MGNREGA is an java application designed to provide BDO and Gram Panchayat Member (GPM) of Block Office with a personalized easy-to-utilize user experience for creating, assigning and managing the project and employee . It stores GPM, Employee and project's data records, project assignments, wage/day, Total receivable amount till current date , and other information.
 >
 >It is Console based Project.
