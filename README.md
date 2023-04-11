@@ -50,12 +50,13 @@
 <br>
 
 # Tech Stack
--Java
--MySQL
--JDBC
-
+- Java
+- MySQL
+- JDBC
+  
 <br>
-# Features 
+
+# Features
 
 - BDO and GPM can login and logout.
 - BDO can create Project and GPM and provide their detail.
