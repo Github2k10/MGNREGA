@@ -31,13 +31,13 @@
  
  #Pictures
 <p align="center">
-  <img width="60%" src="https://github.com/Github2k10/MGNREGA/blob/main/mgnrega-1.png">
+  <img width="70%" src="https://github.com/Github2k10/MGNREGA/blob/main/mgnrega-1.png">
 </p
 
 <br>
 
 <p align="center">
-  <img width="60%" src="https://github.com/Github2k10/MGNREGA/blob/main/mgnrega-2.png">
+  <img width="70%" src="https://github.com/Github2k10/MGNREGA/blob/main/mgnrega-2.png">
 </p
 
 # Features 
