@@ -20,10 +20,14 @@
 >
 >Built application within four days.
 
+<br>
+
 #ER Diagram
 <p align="center">
   <img width="80%" src="https://github.com/Github2k10/MGNREGA/blob/main/drawSQL-mgnrega.png">
 </p
+  
+  <br>
 
 # Features 
 
