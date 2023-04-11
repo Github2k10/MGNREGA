@@ -31,7 +31,7 @@
  
   # Flow Chart
 <p align="center">
-  <img width="70%" src=" https://github.com/Github2k10/MGNREGA/blob/main/Flow-Chart.png">
+  <img width="80%" src="https://github.com/Github2k10/MGNREGA/blob/main/Flow-Chart.png">
 </p
 
   <br>
