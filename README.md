@@ -7,9 +7,9 @@
 >The MGNREGA was initiated with the objective of “enhancing livelihood security in rural areas by providing at least 100 days of guaranteed wage employment in a financial year, to every household whose adult members volunteer to do unskilled manual work”.
 
 >
-> a. BDO (Block Development Officer) 
+> a. Block Development Officer (BDO) 
 >
-> b. Gram Panchayat member
+> b. Gram Panchayat member (GPM)
 > 
 > A project is created by BDO,which  is assigned to corresponding Gram panchayat Members. Gram Panchayat member has acccess to assign to Employees to Complete the Project.
 
@@ -47,6 +47,14 @@
   <img width="70%" src="https://github.com/Github2k10/MGNREGA/blob/main/mgnrega-2.png">
 </p
 
+<br>
+
+# Tech Stack
+-Java
+-MySQL
+-JDBC
+
+<br>
 # Features 
 
 - BDO and GPM can login and logout.
