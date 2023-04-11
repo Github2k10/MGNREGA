@@ -24,14 +24,14 @@
 
 #ER Diagram
 <p align="center">
-  <img width="80%" src="https://github.com/Github2k10/MGNREGA/blob/main/drawSQL-mgnrega.png">
+  <img width="60%" src="https://github.com/Github2k10/MGNREGA/blob/main/drawSQL-mgnrega.png">
 </p
   
-  <br>
+ <br>
  
  #Pictures
 <p align="center">
-  <img width="80%" src="https://github.com/Github2k10/MGNREGA/blob/main/mgnrega-1.png">
+  <img width="60%" src="https://github.com/Github2k10/MGNREGA/blob/main/mgnrega-1.png">
 </p
 
 <br>
