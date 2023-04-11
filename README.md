@@ -28,6 +28,11 @@
 </p
   
   <br>
+ 
+ #Pictures
+<p align="center">
+  <img width="80%" src="https://github.com/Github2k10/MGNREGA/blob/main/drawSQL-mgnrega.png">
+</p
 
 # Features 
 
